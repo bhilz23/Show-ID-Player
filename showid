@@ -6,11 +6,14 @@
 #define ptr6 0xf82 // kiri ujung
 #define ptr5 0x135a //kiri bawah
 
+CAuKey* vKey = (CAuKey*)0x000000; //game input key, alternative getasynckeystate
+
 void ShowID()
 {
     if(showidtrd)
     {
         if (GetAsyncKeyState(VK_NUMPAD1))
+        //if (vKey->NUM1){
         {
             DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
             DWORD getslotid = *(PDWORD)((DWORD)(dwBase))+(ptr1);
