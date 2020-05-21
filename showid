@@ -1,0 +1,50 @@
+#define SlotBase 0x01FD1B60 //new mei 2020
+#define ptr1 0x22 //kanan atas
+#define ptr2 0x3fa //kanan ujung
+#define ptr3 0x7d2 //sebelah kiri dj
+#define ptr4 0xbaa // kanan bawah
+#define ptr6 0xf82 // kiri ujung
+#define ptr5 0x135a //kiri bawah
+
+void ShowID()
+{
+    if(showidtrd)
+    {
+        if (GetAsyncKeyState(VK_NUMPAD1))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid = *(PDWORD)((DWORD)(dwBase))+(ptr1);
+            strcpy((char*)AdrPass1, (char*)getslotid);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD2))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid5 = *(PDWORD)((DWORD)(dwBase))+(ptr2);
+            strcpy((char*)AdrPass1, (char*)getslotid5);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD3))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid1 = *(PDWORD)((DWORD)(dwBase))+(ptr3);
+            strcpy((char*)AdrPass1, (char*)getslotid1);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD4))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid2 = *(PDWORD)((DWORD)(dwBase))+(ptr4);
+            strcpy((char*)AdrPass1, (char*)getslotid2);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD5))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid3 = *(PDWORD)((DWORD)(dwBase))+(ptr5);
+            strcpy((char*)AdrPass1, (char*)getslotid3);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD6))
+        {
+            DWORD dwBase = (DWORD)GetModuleHandleA("Audition.exe") + SlotBase;
+            DWORD getslotid4 = *(PDWORD)((DWORD)(dwBase))+(ptr6);
+            strcpy((char*)AdrPass1, (char*)getslotid4);
+        }
+    }
+}
